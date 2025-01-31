@@ -57,9 +57,9 @@ class AddPupilFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setupToolbar()
-
         init()
+
+        setupToolbar()
 
         populateData()
 
