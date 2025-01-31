@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Android Technical Test</string>
+
+    <string name="pupil_detail_id">Pupil Id:</string>
+    <string name="pupil_detail_name">Pupil Name:</string>
+    <string name="pupil_detail_country">Pupil Country:</string>
+    <string name="sync">Sync</string>
+
+    <string name="data_reset">Api Data Reset</string>
+    <string name="data_reset_failed">Data Reset Failed</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="name">Name</string>
+    <string name="country">Country</string>
+    <string name="select_an_image">Select an image</string>
+    <string name="delete_pupil">Delete Pupil</string>
+    <string name="edit_pupil">Edit Pupil</string>
+</resources>

@@ -1,0 +1,126 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+apply plugin: 'dagger.hilt.android.plugin'
+
+android {
+    compileSdkVersion 33
+    buildToolsVersion '31.0.0'
+
+    defaultConfig {
+        applicationId "com.bridge.androidtechnicaltest"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    buildFeatures{
+        viewBinding = true
+    }
+}
+
+def koinVersion = "2.0.0"
+def androidXLegacySupport = "1.0.0"
+def roomVersion = "2.2.3"
+def retrofitVersion = "2.9.0"
+def rxandroidVersion = "2.0.2"
+def rxJavaVersion = "2.1.14"
+
+def hilt_view_model = '1.0.0-alpha03'
+def arch_lifecycle_version = '2.4.0'
+
+
+dependencies {
+
+    /** Swipe Refresh **/
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+
+    /** Coil **/
+    implementation('io.coil-kt:coil:1.1.1')
+
+    /** vvalidator **/
+    implementation 'com.afollestad:vvalidator:0.5.2'
+
+    /** Circular ImageView **/
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    /** Material Dialogs **/
+    implementation 'com.afollestad.material-dialogs:lifecycle:3.3.0'
+
+    /** Android Lifecycle extensions**/
+    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$arch_lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel:$arch_lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$arch_lifecycle_version"
+    implementation 'androidx.lifecycle:lifecycle-common:2.6.1'
+    implementation 'androidx.savedstate:savedstate:1.2.1'
+
+    /** Dagger Hilt **/
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+
+    kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
+
+
+    // WorkManager
+    def work_version = "2.7.1"
+    implementation "androidx.work:work-runtime-ktx:$work_version"
+    //implementation 'androidx.work:work-runtime-ktx:2.10.0'
+
+    // Hilt extensions for WorkManager
+    implementation "androidx.hilt:hilt-work:1.0.0"
+
+
+    /** Dagger Hilt ViewModel **/
+    // remove implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hilt_view_model"
+    kapt "androidx.hilt:hilt-compiler:$hilt_view_model"
+
+    /** Assent **/
+    implementation 'com.afollestad.assent:core:3.0.2'
+    implementation 'com.afollestad.assent:rationales:3.0.2'
+    implementation 'com.afollestad.assent:coroutines:3.0.2'
+
+    /** Fragment **/
+    implementation "androidx.fragment:fragment-ktx:1.5.6"
+    implementation "androidx.activity:activity-ktx:1.7.0"
+    implementation 'androidx.navigation:navigation-runtime-ktx:2.6.0'
+
+    implementation "androidx.legacy:legacy-support-v4:$androidXLegacySupport"
+    implementation "androidx.appcompat:appcompat:$androidXLegacySupport"
+    implementation "androidx.recyclerview:recyclerview:1.1.0"
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.2'
+    implementation ('com.google.android.material:material:1.6.0') {
+        version {
+            strictly '1.6.0'
+        }
+    }
+
+    /*implementation "org.koin:koin-android-scope:${koinVersion}"
+    implementation "org.koin:koin-android-viewmodel:${koinVersion}"*/
+
+    /** Room **/
+    implementation "androidx.room:room-runtime:$roomVersion"
+    implementation "androidx.room:room-rxjava2:$roomVersion"
+    implementation "androidx.room:room-ktx:$roomVersion"
+    kapt "androidx.room:room-compiler:$roomVersion"
+
+    /** Okhttp Logging **/
+    implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2'
+
+    implementation "io.reactivex.rxjava2:rxandroid:${rxandroidVersion}"
+    implementation "io.reactivex.rxjava2:rxjava:${rxJavaVersion}"
+    implementation "com.squareup.retrofit2:retrofit:${retrofitVersion}"
+    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+    implementation "com.squareup.retrofit2:converter-gson:${retrofitVersion}"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:${retrofitVersion}"
+
+    testImplementation 'junit:junit:4.12'
+    androidTestAnnotationProcessor 'com.google.dagger:dagger-compiler:2.11'
+}
