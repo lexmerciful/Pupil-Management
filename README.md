@@ -38,6 +38,11 @@
             <li>Provides the ability to delete a pupil from the list.</li>
         </ul>
     </li>
+<li><strong>Swipe To Refresh</strong>
+        <ul>
+            <li>Swipe to refresh functionality to refresh the data.</li>
+        </ul>
+    </li>
     <li><strong>Offline Access</strong>
         <ul>
             <li>Data is cached locally using Room database.</li>
